@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.StrategyMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.entity.Strategy">
+        <id column="id" property="id" />
+        <result column="dest_id" property="destId" />
+        <result column="dest_name" property="destName" />
+        <result column="theme_id" property="themeId" />
+        <result column="theme_name" property="themeName" />
+        <result column="catalog_id" property="catalogId" />
+        <result column="catalog_name" property="catalogName" />
+        <result column="title" property="title" />
+        <result column="sub_title" property="subTitle" />
+        <result column="summary" property="summary" />
+        <result column="cover_url" property="coverUrl" />
+        <result column="create_time" property="createTime" />
+        <result column="isabroad" property="isabroad" />
+        <result column="viewnum" property="viewnum" />
+        <result column="replynum" property="replynum" />
+        <result column="favornum" property="favornum" />
+        <result column="sharenum" property="sharenum" />
+        <result column="thumbsupnum" property="thumbsupnum" />
+        <result column="state" property="state" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, dest_id, dest_name, theme_id, theme_name, catalog_id, catalog_name, title, sub_title, summary, cover_url, create_time, isabroad, viewnum, replynum, favornum, sharenum, thumbsupnum, state
+    </sql>
+
+</mapper>

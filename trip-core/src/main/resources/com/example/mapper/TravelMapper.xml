@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.TravelMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.entity.Travel">
+        <id column="id" property="id" />
+        <result column="dest_id" property="destId" />
+        <result column="dest_name" property="destName" />
+        <result column="author_id" property="authorId" />
+        <result column="title" property="title" />
+        <result column="summary" property="summary" />
+        <result column="cover_url" property="coverUrl" />
+        <result column="travel_time" property="travelTime" />
+        <result column="avg_consume" property="avgConsume" />
+        <result column="day" property="day" />
+        <result column="person" property="person" />
+        <result column="create_time" property="createTime" />
+        <result column="release_time" property="releaseTime" />
+        <result column="last_update_time" property="lastUpdateTime" />
+        <result column="ispublic" property="ispublic" />
+        <result column="viewnum" property="viewnum" />
+        <result column="replynum" property="replynum" />
+        <result column="favornum" property="favornum" />
+        <result column="sharenum" property="sharenum" />
+        <result column="thumbsupnum" property="thumbsupnum" />
+        <result column="state" property="state" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, dest_id, dest_name, author_id, title, summary, cover_url, travel_time, avg_consume, day, person, create_time, release_time, last_update_time, ispublic, viewnum, replynum, favornum, sharenum, thumbsupnum, state
+    </sql>
+
+</mapper>

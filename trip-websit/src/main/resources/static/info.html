@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <link href="/styles/base.css" rel="stylesheet" type="text/css">
+    <link href="/styles/regist.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/js/plugins/jquery-form/jquery.form.js"></script>
+    <script src="/js/plugins/js-cookie/js.cookie.min.js"></script>
+    <script src="/js/vue/md5.js"></script>
+    <script type="text/javascript" src="/js/vue/common.js"></script>
+    <script type="text/javascript" src="/js/system/regist.js"></script>
+
+</head>
+<body>
+<script>
+    $(function () {
+        ajaxGet("/travels/info", {}, function (data) {
+            console.log(data);
+        })
+
+        // ajaxGet("/travels/registerUpdate", {nickname:'xiaofei',phone:1956522451},
+        //     function (data) {
+        //     console.log(data);
+        // })
+
+        /*ajaxGet("/travels/abc", {nickname: "wolfcode", age: 20},
+            function (data) {
+            console.log(data);
+        })*/
+
+        //需求: 发送请求, 访问:/users/currentUser, 检验用户是否登录
+        //如果已经登录, 返回当前登录用户对象, 如果没登录返回null
+
+        //存在问题: 无法携带登录令牌(token)
+       /* $.get(domainUrl + "/users/currentUser", {}, function (data) {
+            console.log(data);
+        })*/
+
+        //jquery发起异步请求方式3: $.get  $.post $.ajax
+        /*$.ajax({
+            url: domainUrl + "/users/currentUser",
+            type: "GET",
+            data: {},
+            beforeSend: function (xhr) {//请求发送之前执行逻辑操作
+                //给ajax请求添加name为token的请求头
+                xhr.setRequestHeader("token", getToken());
+            },
+            success: function (data) {
+                console.log(data);
+            }
+        });*/
+
+        /* ajaxGet("/users/currentUser", {}, function (data) {
+             console.log(data);
+         })*/
+
+        /*  ajaxGet("/travels/updateInfo", {nickname:"dafei11111"}, function (data) {
+                console.log(data);
+          })
+    */
+
+
+        //需求:发起请求访问  /test2, 需要添加防篡改逻辑
+
+        //var sign_client = xxxxx;
+        /* ajaxGet("/test2", {a:1, b:2,c:3, d:4}, function (data) {
+             console.log(data);
+         })*/
+
+        // ajaxGet("/test1", {aa: 1, bb: 2, cc: 3}, function (data) {
+        //     console.log(data)
+        // })
+
+
+        /*  ajaxGet("/test1", {aa: 1, bb: 2, cc: 3}, function (data) {
+              console.log(data)
+          })*/
+
+
+    })
+
+</script>
+
+
+
+
+<!--
+攻略阅读数分析
+1.页面发起请求，点击页面  带上攻略ID
+2.使用攻略SID拼接出VO对象 key   例如：strategy_statis_vo:id
+3.通过KEY查询redis缓存 得到VO对象
+4.如果VO对象为null
+  表示该攻略是第一次被访问。还没有阅读数。需要初始化VO对象（通过查询MYSQL数据库来初始化）
+5.对VO对象中的viewnum属性+1
+
+6.更新redis中的VO对象内容
+
+-->
+
+</body>
+</html>
